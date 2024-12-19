@@ -182,6 +182,35 @@ Perform time-series analysis if temporal data becomes available.
 
 Extend the analysis to include external datasets for benchmarking.
 
+
+**App/ Dashboard**
+
+Step 1: Open RStudio
+Launch RStudio on your computer.
+Set the working directory to the folder containing  Shiny app.
+
+Step 2: Set Working Directory
+setwd("C:/Users/drraa/Downloads/Data science projects/Insurance Analysis")
+
+Step 3: Run the App
+shiny::runApp("App Insurance.R")
+
+Step 4: Access the App- Locally
+The app will open automatically in your default web browser.
+Listening on http://127.0.0.1:3199
+
+For deploying on web
+
+library(readxl)
+insurance_data <- read_excel("insurance-2.xlsx")
+file.exists("insurance-2.xlsx")
+shiny::runApp("App Insurance.R")
+library(rsconnect)
+rsconnect::setAccountInfo(name='raagalikhitha',
+                          token='secret',
+                          secret='Secret')
+rsconnect::deployApp("C:/Users/drraa/Downloads/Data science projects/Insurance Analysis")
+
 **Contributing**
 
 Contributions are welcome! If you have ideas for additional analyses or enhancements, feel free to fork the repository and submit a pull request.
