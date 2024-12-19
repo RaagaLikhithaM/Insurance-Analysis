@@ -202,13 +202,19 @@ Listening on http://127.0.0.1:3199
 For deploying on web
 
 library(readxl)
+
 insurance_data <- read_excel("insurance-2.xlsx")
+
 file.exists("insurance-2.xlsx")
+
 shiny::runApp("App Insurance.R")
-library(rsconnect)
+
+library(reconnect)
+
 rsconnect::setAccountInfo(name='raagalikhitha',
                           token='secret',
                           secret='Secret')
+                          
 rsconnect::deployApp("C:/Users/drraa/Downloads/Data science projects/Insurance Analysis")
 
 **Contributing**
